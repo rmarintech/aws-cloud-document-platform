@@ -1,0 +1,12 @@
+aws:
+  region: us-east-1
+  endpoint: http://localhost:4566
+  access-key: test
+  secret-key: test
+  s3:
+    bucket: document-platform
+    path-style-access: true
+
+  # path-style-access
+  #  Virtual-hosted style: El bucket forma parte del nombre.    document-platform.s3.amazonaws.com/hello.txt
+  #  Path style: El bucket forma parte de la ruta.              localhost:4566/document-platform/hello.txt

@@ -28,7 +28,26 @@
     </scm>
     <properties>
         <java.version>21</java.version>
+        <aws-sdk.version>2.59.9</aws-sdk.version>
     </properties>
+
+    <dependencyManagement>
+        <!--
+        ¿Qué es el BOM (Bill of Materials)?
+        Permite gestionar centralizadamente las versiones de las dependencias de AWS.
+        Cuando incorporemos SQS, SNS u otros servicios, no tendremos que especificar una versión para cada dependencia.
+        -->
+        <dependencies>
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${aws-sdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -58,6 +77,13 @@
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- AWS S3 -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

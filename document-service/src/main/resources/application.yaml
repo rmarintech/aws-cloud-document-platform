@@ -1,3 +1,6 @@
 spring:
   application:
     name: document-service
+
+  profiles:
+    default: local
