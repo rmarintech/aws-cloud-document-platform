@@ -1,0 +1,9 @@
+# Normalize text files
+* text=auto
+
+# Linux shell scripts
+*.sh text eol=lf
+
+# Windows scripts
+*.cmd text eol=crlf
+*.bat text eol=crlf

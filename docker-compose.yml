@@ -8,3 +8,7 @@ services:
       - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN:?}
       - SERVICES=s3
       - DEBUG=1
+    volumes:
+      - ./infrastructure/localstack/init:/etc/localstack/init/ready.d:ro
+        #LocalStack requiere que los scripts Bash tengan permiso de ejecución
+        #git update-index --chmod=+x infrastructure/localstack/init/init-s3.sh
